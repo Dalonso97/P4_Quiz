@@ -215,7 +215,7 @@ exports.testCmd = (rl,id) =>{
 
 exports.creditsCmd = rl => {
     log('Autores de la practica:');
-    log('DAVID ALONSO DEL BARRIO');
+    log('DAVID');
     rl.prompt();
 };
 
