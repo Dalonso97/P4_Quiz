@@ -13,5 +13,9 @@
     "node"
   ],
   "author": "David Alonso del Barrio",
-  "license": "Unlicense"
+  "license": "Unlicense",
+  "dependencies": {
+    "chalk": "^2.3.1",
+    "figlet": "^1.2.0"
+  }
 }
