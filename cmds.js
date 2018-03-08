@@ -142,7 +142,7 @@ exports.playCmd = rl =>{
              let quiz = toBeResolved[id];
              toBeResolved.splice(id, 1);
 
-             rl.question(colorize(quiz.question, 'red'), resp => {
+             rl.question(colorize(`${quiz.question}?`, 'red'), resp => {
                  if (resp.toLowerCase().trim() === quiz.answer.toLowerCase().trim()) {
 
                      score++
@@ -155,7 +155,7 @@ exports.playCmd = rl =>{
 
                  else {
                      log('INCORRECTO.');
-                     log(`Fin del juego. Aciertos:`)
+                     log(`Fin del juego. Aciertos: ${score}`)
                      biglog(score, 'magenta');
                      rl.prompt()
 
