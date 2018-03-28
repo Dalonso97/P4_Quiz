@@ -19,8 +19,8 @@ const colorize = (msg, color) => {
  * @param msg El string a ecribir
  * "param color Color del texto
  */
-const log = (msg, color) =>{
-    console.log(colorize(msg,color));
+const log = (socket, msg, color) =>{
+    socket.write(colorize(msg,color) + "\n");
 
 };
 
@@ -29,16 +29,16 @@ const log = (msg, color) =>{
  * @param msg Texto a escribir
  * @param color Color de texto
  */
-const biglog = (msg, color) => {
-    log(figlet.textSync(msg,{horizontalLayout: 'full'}),color);
+const biglog = (socket, msg, color) => {
+    log(socket, figlet.textSync(msg,{horizontalLayout: 'full'}),color);
 };
 
 /**
  * Escrbe el mensaje de error emsg
  * @param emsg Texto del menssaje de error.
  */
-const errorlog = (emsg)=> {
-    console.log(`${colorize("Error", "red")}: ${colorize(colorize(emsg, "red"), "bgYellowBright")}`);
+const errorlog = (socket, emsg)=> {
+    socket.write(`${colorize("Error", "red")}: ${colorize(colorize(emsg, "red"), "bgYellowBright")}\n`);
 };
 
 exports = module.exports = {
